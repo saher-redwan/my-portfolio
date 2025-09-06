@@ -96,6 +96,11 @@ header {
   scale: 0.6;
   display: none;
   cursor: pointer;
+
+  &.active {
+    scale: 1;
+    padding: 0.5rem;
+  }
 }
 
 .bar {
@@ -133,7 +138,8 @@ header {
   box-shadow: 3px 5px 0px 2px #FFD700;
 }
 
-.home-png::after, .home-png::before {
+.home-png::after,
+.home-png::before {
   content: "";
   position: absolute;
   top: 0;
@@ -154,6 +160,7 @@ header {
   rotate: 45deg;
   border: 4px solid #ffe973;
 }
+
 .home-png:hover::before {
   top: calc(93%);
   left: calc(93%);
@@ -335,12 +342,34 @@ section {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   text-align: center;
-  transition: var(--transition);
+  transition: 0.135s;
   border-top: 5px solid black;
+
+  i {
+    /* stopped here */
+    text-shadow: 0 0 8px #00000094 !important;
+    /* text-shadow: 0 0 12px #00000063;
+    background-color: red; */
+  }
+
+  i::before {
+    transition: 0.3s;
+  }
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
+
+  i {
+    margin-top: -5.5px;
+
+    &::before {
+      display: inline-block;
+      transform: translateY(-12px);
+      scale: 1.45;
+      filter: drop-shadow(0px -1px 1px black);
+    }
+  }
 }
 
 .skill-card i {
@@ -408,9 +437,11 @@ section {
   flex-wrap: nowrap;
 }
 
-.info-item p {
+.info-item p,
+.info-item a {
   text-wrap: nowrap;
   margin-bottom: 0;
+  color: var(--text-color);
 }
 
 .about-info {
@@ -534,6 +565,10 @@ section {
 .contact-info p {
   margin-bottom: 1rem;
   line-height: 1.6;
+
+  a {
+    color: var(--text-color);
+  }
 }
 
 .info-box {
@@ -894,7 +929,7 @@ form .btn:hover i {
     right: -100%;
     flex-direction: column;
     background-color: var(--bg-color);
-    width: 70%;
+    width: 88%;
     height: 100vh;
     text-align: center;
     transition: 0.3s;
@@ -1127,4 +1162,164 @@ form .btn:hover i {
 
 .scroll-btn {
   animation: bounce 3s infinite;
+}
+
+
+/* Game Part */
+.tictoe-fixedBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 6px 15px;
+  border: none;
+  border-radius: 50px;
+  /* background: teal; */
+  background: #4f4387;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  transition: 0.2s;
+
+  svg,
+  svg * {
+    fill: #fff;
+    filter: drop-shadow(2px 4px 2.5px #0000003c);
+  }
+}
+
+.tictoe-fixedBtn:hover {
+  scale: 1.1;
+  rotate: -2.5deg;
+
+  svg {
+    filter: drop-shadow(2px -30px 0px #000);
+    rotate: 8.5deg;
+  }
+}
+
+/* Modal */
+.tictoe-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.tictoe-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tictoe-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+  padding: 3px 13px;
+  margin-right: -10px;
+}
+
+.tictoe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.tictoe-cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transition: background 0.2s;
+
+  span {
+    animation: opacity-animation 0.165s;
+  }
+
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+
+.tictoe-cell:hover {
+  background: #e0e0e0;
+}
+
+.tictoe-status {
+  font-size: 18px;
+  margin-top: 10px;
+
+  &.add-animation {
+    text-shadow: 0 0 15px green, 0 0 15px green, 0 0 15px green, 10px 10px 15px green;
+    scale: 1.075;
+  }
+
+  &.remove-animation {
+    text-shadow: 0 0 0 transparent;
+    scale: 1;
+  }
+
+  span {
+    font-weight: 600;
+    margin: 0 1px;
+  }
+
+}
+
+.tictoe-restart {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: teal;
+  color: white;
+  cursor: pointer;
 }

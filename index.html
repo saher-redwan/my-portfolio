@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <a href="#" class="logo">CodeWithSaher.</a>
+    <a href="#home" class="logo">CodeWithSaher.</a>
     <div class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -27,6 +27,33 @@
     </ul>
   </header>
 
+  <!-- Game Part -->
+  <button class="tictoe-fixedBtn" id="tictoe-openBtn">
+    PLAY
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" style="width: 28px;">
+      <path class="puchipuchi_een" d="M30.838,18.634h0.002l-2.107-9.173C28.081,7.458,26.221,6,24,6c-1.63,0-3.065,0.792-3.977,2h-8.045
+	C11.065,6.792,9.63,6,8,6C5.779,6,3.919,7.458,3.267,9.461L1.16,18.633h0.002C1.06,19.073,1,19.529,1,20c0,3.314,2.686,6,6,6
+	c2.611,0,4.827-1.671,5.651-4h6.698c0.825,2.329,3.04,4,5.651,4c3.314,0,6-2.686,6-6C31,19.529,30.94,19.073,30.838,18.634z M10,16
+	H9v1c0,0.552-0.447,1-1,1s-1-0.448-1-1v-1H6c-0.553,0-1-0.448-1-1s0.447-1,1-1h1v-1c0-0.552,0.447-1,1-1s1,0.448,1,1v1h1
+	c0.553,0,1,0.448,1,1S10.553,16,10,16z M23,17c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S23.552,17,23,17z M23,14
+	c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S23.552,14,23,14z M26,17c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1
+	S26.552,17,26,17z M26,14c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S26.552,14,26,14z" />
+    </svg>
+  </button>
+
+  <!-- Modal -->
+  <div class="tictoe-overlay" id="tictoe-overlay">
+    <div class="tictoe-modal">
+      <span class="tictoe-close" id="tictoe-closeBtn">&times;</span>
+      <h3>Tic Tac Toe</h3>
+      <div id="tictoe-board" class="tictoe-board"></div>
+      <div id="tictoe-status" class="tictoe-status">Player X's turn</div>
+      <button id="tictoe-restart" class="tictoe-restart">Restart</button>
+    </div>
+  </div>
+
   <section class="home" id="home">
     <div class="home-text">
       <h2>Hello, I'm Saher <i class="ph-bold ph-hand-waving"></i></h2>
@@ -37,8 +64,8 @@
         delivering exceptional web experiences that harmonize creativity with high performance.
       </p>
       <div class="home-btn">
-        <a href="#" class="btn">Contact Info</a>
-        <a href="#" class="btn">Download CV <i class="ph ph-read-cv-logo"></i></a>
+        <a href="#contact" class="btn">Contact Info</a>
+        <a href="/docs/myCV_Resume.pdf" download class="btn">Download CV <i class="ph ph-read-cv-logo"></i></a>
       </div>
     </div>
     <div class="home-png">
@@ -132,7 +159,7 @@
           </div>
           <div class="info-item">
             <span>Email:</span>
-            <p>saher9redwan@gmail.com</p>
+            <p><a href="mailto:saher9redwan@gmail.com">saher9redwan@gmail.com</a></p>
           </div>
           <div class="info-item">
             <span>Location:</span>
@@ -216,10 +243,11 @@
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
+            <span>Consistent & Responsive Design</span>
           </div>
           <div class="project-links">
-            <a href="#" class="btn">Live Demo</a>
-            <a href="#" class="btn">View Code</a>
+            <a href="https://my-portfolio-website-application.netlify.app/" class="btn">Live Demo</a>
+            <a href="https://github.com/saher-redwan/my-portfolio" class="btn">View Code</a>
           </div>
         </div>
       </div>
@@ -243,7 +271,7 @@
           <i class="ph-bold ph-envelope"></i>
           <div>
             <h4>Email</h4>
-            <p>saher9redwan@gmail.com</p>
+            <p><a href="mailto:saher9redwan@gmail.com">saher9redwan@gmail.com</a></p>
           </div>
         </div>
         <div class="info-box">
@@ -257,7 +285,7 @@
           <i class="ph-bold ph-phone"></i>
           <div>
             <h4>Phone</h4>
-            <p>+970 597520898</p>
+            <p><a href="tel:+970597520898">+970 597520898</a></p>
           </div>
         </div>
         <div class="contact-social">
@@ -300,7 +328,7 @@
     <div class="footer-container">
       <div class="footer-top">
         <div class="footer-logo">
-          <a href="#" class="logo">CodeWithHim.</a>
+          <a href="#home" class="logo">CodeWithHim.</a>
           <p>
             Creating beautiful digital experiences with clean and efficient
             code.
@@ -347,6 +375,7 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/gameScript.js"></script>
 </body>
 
 </html>
