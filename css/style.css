@@ -777,6 +777,7 @@ footer * {
   color: #1e1e24;
   border: 1px solid #f7f7f2;
   white-space: nowrap;
+  display: none;
 }
 
 .newsletter-form .btn:hover {
