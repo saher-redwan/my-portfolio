@@ -671,7 +671,8 @@ form .btn:hover i {
 }
 
 footer * {
-  word-break: break-word;
+  /* word-break: break-word; */
+  word-wrap: break-word;
 }
 
 .footer-container {
@@ -776,7 +777,6 @@ footer * {
   background-color: #f7f7f2;
   color: #1e1e24;
   border: 1px solid #f7f7f2;
-  word-break: normal;
 }
 
 .newsletter-form .btn:hover {
