@@ -670,10 +670,6 @@ form .btn:hover i {
   justify-self: center;
 }
 
-footer * {
-  word-break: break-word;
-}
-
 .footer-container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -755,7 +751,6 @@ footer * {
   display: flex;
   gap: 0.5rem;
   width: 100%;
-  max-width: calc(100%);
 }
 
 .newsletter-form input {
