@@ -670,6 +670,10 @@ form .btn:hover i {
   justify-self: center;
 }
 
+footer * {
+  word-break: break-word;
+}
+
 .footer-container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -692,7 +696,6 @@ form .btn:hover i {
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: #ccc;
-  word-break: break-word;
 }
 
 .footer-links h4 {
