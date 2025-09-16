@@ -751,6 +751,7 @@ form .btn:hover i {
   display: flex;
   gap: 0.5rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .newsletter-form input {
@@ -771,8 +772,6 @@ form .btn:hover i {
   background-color: #f7f7f2;
   color: #1e1e24;
   border: 1px solid #f7f7f2;
-  min-width: fit-content;
-  width: fit-content;
 }
 
 .newsletter-form .btn:hover {
