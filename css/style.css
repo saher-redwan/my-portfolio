@@ -776,6 +776,7 @@ footer * {
   background-color: #f7f7f2;
   color: #1e1e24;
   border: 1px solid #f7f7f2;
+  width: unset;
 }
 
 .newsletter-form .btn:hover {
