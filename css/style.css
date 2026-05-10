@@ -479,6 +479,8 @@ section {
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -502,6 +504,9 @@ section {
 
 .project-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-content h3 {
@@ -534,7 +539,9 @@ section {
 .project-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
+
 
 /* Contact Section */
 .contact {
